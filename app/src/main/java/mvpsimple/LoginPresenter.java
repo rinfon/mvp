@@ -1,13 +1,4 @@
-package presenter;
-
-import android.util.Log;
-
-import base.BaseInteractor;
-import base.BaseInteractorImpl;
-import base.BasePresenterImpl;
-import base.IBaseRepository;
-import base.IBaseView;
-import repository.LoginRepository;
+package mvpsimple;
 
 /**
  * Created by rinfon on 2018/4/9.

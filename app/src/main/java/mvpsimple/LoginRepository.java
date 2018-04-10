@@ -1,9 +1,4 @@
-package repository;
-
-import base.BaseInteractor;
-import base.BaseRepository;
-import base.ErrorCode;
-import base.IBaseRepository;
+package mvpsimple;
 
 /**
  * Created by rinfon on 2018/4/8.

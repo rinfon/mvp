@@ -1,29 +1,38 @@
-package View;
+package mvpsimple;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.NetworkOnMainThreadException;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.rinfon.mvp.R;
 
-import java.io.FileNotFoundException;
+import mvpclean.MvpCleanActivity;
 
-import base.ErrorCode;
-import base.IBaseView;
-import presenter.LoginPresenter;
-import repository.LoginRepository;
 
 public class MainActivity extends Activity implements IBaseView<String> {
 
     LoginPresenter loginPresenter;
 
+    TextView btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btn = (TextView) findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MvpCleanActivity.class);
+                startActivity(intent);
+            }
+        });
         loginPresenter = new LoginPresenter(this);
         loginPresenter.toLogin("111", "111");
+
     }
 
     @Override
